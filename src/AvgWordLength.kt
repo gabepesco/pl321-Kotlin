@@ -1,7 +1,7 @@
 import kotlin.test.assertEquals
 
 fun avgWordLength(str: String): Double {
-    val specialChars = mutableListOf<String>(".", "?", ",", ":", ";", "&")
+    val specialChars = mutableListOf(".", "?", ",", ":", ";", "&")
     var newString = str
     for (char in specialChars){
         newString = newString.replace(char, "")
