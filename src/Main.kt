@@ -6,4 +6,5 @@ fun readFileDirectlyAsText(fileName: String): String
 fun main(args: Array<String>) {
     val file = readFileDirectlyAsText("example.txt")
     println(avgWordLength(file))
+    println(wordCount(file))
 }
