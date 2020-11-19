@@ -13,6 +13,12 @@ https://kotlinlang.org/docs/reference/basic-syntax.html
 
 https://play.kotlinlang.org/byExample/01_introduction/01_Hello%20world
 
+Syntax: In general, Kotlin is implicitly typed, with most variables being instatiated as val or var, val being immutable where var is mutable.
+
+Testing:
+
+Learning Curve:
+
 Challenges:
 
 Benefits:
