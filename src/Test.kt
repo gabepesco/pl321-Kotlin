@@ -1,4 +1,3 @@
-import java.io.File
 import kotlin.test.assertEquals
 
 fun avgWordLengthTest() {
@@ -20,13 +19,16 @@ fun wordCountTest() {
 }
 
 fun wordFrequenciesTest() {
-    val wordMap = wordFrequencies(File("example.txt").readText(Charsets.UTF_8))
-    assertEquals(wordMap["ut"], 11)
-    assertEquals(wordMap["lorem"], 1)
+    val wordMap = wordFrequencies("This is a really long string with many a a a a")
+    assertEquals(wordMap["a"], 5)
+    assertEquals(wordMap["This"], null)
+    assertEquals(wordMap["this"], 1)
     assertEquals(wordMap["bazinga"], null)
     assertEquals(wordMap[""], null)
 }
 
 fun main(args: Array<String>){
+    avgWordLengthTest()
     wordCountTest()
+    wordFrequenciesTest()
 }

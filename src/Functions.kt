@@ -10,7 +10,7 @@ fun avgWordLength(str: String): Double {
 		newString = newString.replace(char, "")
 	}
 	val words = newString.split(" ", ".", "?", ",", ":", ";", "&")
-	var sum = words.fold(0.0) {sum, element -> sum + element.length}
+	val sum = words.fold(0.0) {sum, element -> sum + element.length}
 	return sum / words.size
 
 }
@@ -32,7 +32,7 @@ fun wordFrequencies(str: String): Map<String?, Int?> {
 	val wordMap: MutableMap<String?, Int?> = HashMap()
 
 	for (word in words) {
-		increment(wordMap, word)
+		increment(wordMap, word.toLowerCase())
 	}
 
 	return wordMap.toList().sortedBy {-it.second!! }.toMap()
