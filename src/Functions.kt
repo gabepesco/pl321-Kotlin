@@ -10,11 +10,8 @@ fun avgWordLength(str: String): Double {
 		newString = newString.replace(char, "")
 	}
 	val words = newString.split(" ", ".", "?", ",", ":", ";", "&")
-	var total = 0.0
-	for (word in words) {
-		total += word.length
-	}
-	return total / words.size
+	var sum = words.fold(0.0) {sum, element -> sum + element.length}
+	return sum / words.size
 
 }
 
