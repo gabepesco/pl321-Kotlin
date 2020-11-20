@@ -7,23 +7,11 @@ fun avgWordLength(str: String): Double {
         newString = newString.replace(char, "")
     }
     val words = newString.split(" ", ".", "?", ",", ":", ";", "&")
-    var total = 0.0
-    for (word in words) {
-        total += word.length
-    }
-    return total / words.size
+    var sum = words.fold(0.0) {sum, element -> sum + element.length}
+    //var total = 0.0
+    //for (word in words) {
+        //total += word.length
+    //}
+    return sum / words.size
 
-}
-
-fun avgWordLengthTest(){
-    assertEquals(4.0, avgWordLength("These are four"))
-    assertEquals(0.0, avgWordLength(""))
-    assertEquals(1.0, avgWordLength("a"))
-    assertEquals(2.5, avgWordLength("a test"))
-    assertEquals(3.0, avgWordLength("123"))
-    assertEquals(1.0, avgWordLength("a, b. c? d: e; f&"))
-}
-
-fun main(args: Array<String>){
-    avgWordLengthTest()
 }
